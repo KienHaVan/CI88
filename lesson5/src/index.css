@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* COLORS */
+  --BGCOLOR: #0f172a;
+  --BORDER-COLOR: #fff;
+  --COLOR: #fff;
+  --ERROR: firebrick;
+  --INACTIVE: lightgray;
+  --LINK-COLOR: whitesmoke;
+  --LINK-HOVER: rgba(245, 245, 245, 0.9);
+  --NOTE-BGCOLOR: hsla(240, 64%, 27%, 0.65);
+  --STATUS-COMPLETE: limegreen;
+  --STATUS-OPEN: firebrick;
+  --TABLE-BGCOLOR: #fff;
+  --TABLE-COLOR: #000;
+  --INPUT-INVALID: #f00;
+}
+
+.Apps {
+  background-image: url('./img/background.jpg');
+  background-color: var(--BGCOLOR);
+  min-height: 100vh;
+  background-size: cover;
+  background-position: top right;
+  background-blend-mode: multiply;
+}
