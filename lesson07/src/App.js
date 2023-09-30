@@ -16,7 +16,7 @@ function App() {
     //   });
     const fetchApi = async () => {
       const results = await fetch(
-        `https://jsonplaceholder.typicode.com/${type}`
+        `https://6516e61d09e3260018ca7474.mockapi.io/api/v1/products`
       );
       const posts = await results.json();
       setPosts(posts);
