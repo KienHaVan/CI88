@@ -1,26 +1,26 @@
-import React, { createContext } from 'react';
+import React, { createContext, useState } from 'react';
 import './App.css';
 import Header from './components/Header';
 import ProductList from './components/ProductList';
+import { ProductProvider } from './context/ProductContext';
 
 const App = () => {
-  // const [first, setFirst] = useState()
-  const productCount = 0;
-  const productContext = createContext();
   return (
-    <div
-      style={{
-        width: '100vw',
-        height: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-    >
-      <Header />
-      <ProductList />
-    </div>
+    <ProductProvider>
+      <div
+        style={{
+          width: '100vw',
+          height: '100vh',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <Header />
+        <ProductList />
+      </div>
+    </ProductProvider>
   );
 };
 
