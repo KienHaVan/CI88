@@ -1,5 +1,6 @@
 import axios from 'axios';
-import React from 'react';
+import React, { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 
 const App = () => {
   // const handleGetData = () => {
@@ -14,14 +15,28 @@ const App = () => {
   //       console.log(error.message);
   //     });
   // };
+  const [loading, setLoading] = useState(false);
   const handleGetData = async () => {
+    setLoading(true);
     // async await
     try {
       const { data: products } = await axios.get(
-        'https://6516e61d09e3260018ca7474.mockapi.io/api/v1/productssdfd'
+        'https://6516e61d09e3260018ca7474.mockapi.io/api/v1/products'
       );
+      toast('Get successfully', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+      });
       console.log(products);
+      setLoading(false);
     } catch (error) {
+      setLoading(false);
       console.log(error.message);
     }
   };
@@ -52,7 +67,7 @@ const App = () => {
     );
   };
   return (
-    <div className="max-w-[1280px] mx-auto h-[100vh] h-full w-full flex justify-center items-center gap-4">
+    <div className="max-w-[1280px] mx-auto h-[100vh] h-full w-full flex justify-center items-center gap-4 ">
       <button
         className="px-4 py-2 border rounded-lg text-white bg-green-400"
         onClick={handleGetData}
@@ -78,6 +93,7 @@ const App = () => {
       >
         Delete one data
       </button>
+      {loading && <p>Loading...</p>}
     </div>
   );
 };
