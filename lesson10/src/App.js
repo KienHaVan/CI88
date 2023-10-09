@@ -6,6 +6,8 @@ import Cart from './components/Cart';
 import Contact from './components/Contact';
 import './App.css';
 import Header from './components/layout/Header';
+import NotFound from './components/NotFound';
+import ProductDetail from './components/ProductDetail';
 
 const App = () => {
   return (
@@ -13,9 +15,11 @@ const App = () => {
       <Route element={<Header />}>
         <Route path="/" element={<Home />} />
         <Route path="/product" element={<Product />} />
+        <Route path="/products/:productId" element={<ProductDetail />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/contact" element={<Contact />} />
       </Route>
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };

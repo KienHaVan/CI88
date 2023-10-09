@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Home = () => {
+const NotFound = () => {
   return (
     <div>
-      <Link to="/product">
+      <Link to="/">
         <button
           style={{
             width: '200px',
@@ -16,11 +16,11 @@ const Home = () => {
             backgroundColor: 'green',
           }}
         >
-          Move to product
+          Move to Home
         </button>
       </Link>
     </div>
   );
 };
 
-export default Home;
+export default NotFound;

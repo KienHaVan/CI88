@@ -36,16 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-button {
-  width: 200px;
-  height: 50px;
-  display: flex;
-  justifycontent: center;
-  alignitems: center;
-  borderwidth: 1px;
-}
-
-active-item {
-  background-color: chocolate;
-}
