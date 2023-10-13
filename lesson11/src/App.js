@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
+import ClipLoader from 'react-spinners/ClipLoader';
 
 const App = () => {
   // const handleGetData = () => {
@@ -16,6 +17,11 @@ const App = () => {
   //     });
   // };
   const [loading, setLoading] = useState(false);
+  const override = {
+    display: 'block',
+    margin: '0 auto',
+    borderColor: 'red',
+  };
   const handleGetData = async () => {
     setLoading(true);
     // async await
@@ -67,7 +73,7 @@ const App = () => {
     );
   };
   return (
-    <div className="max-w-[1280px] mx-auto h-[100vh] h-full w-full flex justify-center items-center gap-4 ">
+    <div className="max-w-[1280px] mx-auto h-[100vh] w-full flex justify-center items-center gap-4 ">
       <button
         className="px-4 py-2 border rounded-lg text-white bg-green-400"
         onClick={handleGetData}
@@ -93,7 +99,16 @@ const App = () => {
       >
         Delete one data
       </button>
-      {loading && <p>Loading...</p>}
+      {loading && (
+        <ClipLoader
+          color={'#fff'}
+          loading={loading}
+          cssOverride={override}
+          size={150}
+          aria-label="Loading Spinner"
+          data-testid="loader"
+        />
+      )}
     </div>
   );
 };
